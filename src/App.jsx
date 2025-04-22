@@ -1,21 +1,26 @@
 import { useState } from 'react'
-import Home from './pages/Home.jsx'
+
 import { Routes,Route } from 'react-router'
+import './index.css'
+import Signup from './component/Signup'
+import './App.css'
+import Login from './component/Login'
 
 
 
 function App() {
-  
+  const [count, setCount] = useState(0)
 
   return (
     <>
-    <div className='mx-4 sm:mx-[10%] '>
+    <Routes>
+      <Route path='/register' element={<Signup/>} ></Route>
+      <Route path='/login' element={<Login/>} ></Route>
 
-     <Routes>
-        <Route path='/' element={<Home />} />
-     </Routes>
-    </div>
-     
+    </Routes>
+   
+        
+   
     </>
   )
 }
